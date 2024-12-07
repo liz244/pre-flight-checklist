@@ -5,7 +5,7 @@ import api from "../services/api";
 function Dashboard() {
   const [checklists, setChecklists] = useState([]);
 
-  // Récupère toutes les checklists au chargement de la page
+  // Retrieves all checklists on page load
   useEffect(() => {
     async function fetchChecklists() {
       try {
@@ -18,7 +18,7 @@ function Dashboard() {
     fetchChecklists();
   }, []);
 
-  // Supprime une checklist après confirmation
+  // Delete a checklist after confirmation
   async function deleteChecklist(id) {
     const confirm = window.confirm(
       "Are you sure you want to delete this checklist?"
@@ -35,22 +35,22 @@ function Dashboard() {
 
   return (
     <div className="dashboard">
-      {/* Titre principal */}
+      {/* Main Title */}
       <h1 className="dashboard-title">Dashboard</h1>
 
-      {/* Bouton pour créer une nouvelle checklist */}
+      {/* Button to create a new checklist */}
       <Link to="/form" className="button new-button">
         + New Checklist
       </Link>
 
-      {/* Affichage des checklists */}
+      {/* Viewing checklists */}
       {checklists.length === 0 ? (
         <p className="no-checklists">No checklists created yet.</p>
       ) : (
         <ul className="checklist-list">
           {checklists.map((checklist) => (
             <li key={checklist.id} className="checklist-item">
-              {/* Section du statut */}
+              {/* Status section */}
               <div className="status">
                 {checklist.todo.filter((task) => task.status === 1).length ===
                 checklist.todo.length && checklist.todo.length > 0
@@ -60,7 +60,7 @@ function Dashboard() {
                   : "EMPTY"}
               </div>
 
-              {/* Titre et description */}
+              {/* Title and description */}
               <div className="checklist-content">
                 <Link
                   to={`/checklist/${checklist.id}`}
@@ -71,13 +71,13 @@ function Dashboard() {
                 </Link>
               </div>
 
-              {/* Progression des tâches */}
+              {/* Task progress */}
               <p className="task-progress">
                 {checklist.todo.filter((task) => task.status === 1).length} /{" "}
                 {checklist.todo.length} tasks completed
               </p>
 
-              {/* Boutons d'action */}
+              {/* Action buttons*/}
               <div className="actions">
                 <Link
                   to={`/form/${checklist.id}`}

@@ -1,17 +1,17 @@
-import React, { useState, useEffect } from "react"; // Pour useState et useEffect
-import { useParams, useNavigate } from "react-router-dom"; // Pour useParams et useNavigate
-import api from "../services/api"; // Pour appeler les fonctions API
+import React, { useState, useEffect } from "react"; // For useState and useEffect
+import { useParams, useNavigate } from "react-router-dom"; // For useParams and useNavigate
+import api from "../services/api"; // To call API functions
 
 
 function ChecklistForm() {
-  const { id } = useParams(); // Récupère l'ID depuis l'URL (s'il existe)
-  const navigate = useNavigate(); // Pour rediriger vers le dashboard
+  const { id } = useParams(); //Get ID from URL (if it exists)
+  const navigate = useNavigate(); // To redirect to the dashboard
 
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
   const [tasks, setTasks] = useState([]);
 
-  // Charger les données si on modifie une checklist existante
+  // Load data if modifying an existing checklist
   useEffect(() => {
     if (id) {
       async function fetchChecklist() {
@@ -29,12 +29,12 @@ function ChecklistForm() {
     }
   }, [id]);
 
-  // Fonction pour ajouter une nouvelle tâche
+  // Function to add new task
   function addTask() {
     setTasks([...tasks, { title: "", description: "", status: 0 }]);
   }
 
-  // Fonction pour mettre à jour une tâche existante
+  // Function to update an existing task
   function updateTask(index, field, value) {
     const updatedTasks = tasks.map((task, i) =>
       i === index ? { ...task, [field]: value } : task
@@ -42,17 +42,17 @@ function ChecklistForm() {
     setTasks(updatedTasks);
   }
 
-  // Fonction pour supprimer une tâche
+  // Fonction for delete a task
   function deleteTask(index) {
     const updatedTasks = tasks.filter((_, i) => i !== index);
     setTasks(updatedTasks);
   }
 
-  // Sauvegarder la checklist (création ou modification)
+  // Save a checklist (création or modification)
   async function saveChecklist() {
     try {
       if (id) {
-        // Modifier une checklist existante
+        // Modify a checklist
         await api.post("checklist/update", {
           id,
           title,
@@ -60,14 +60,14 @@ function ChecklistForm() {
           todo: tasks,
         });
       } else {
-        // Créer une nouvelle checklist
+        // Create new checklist
         await api.post("checklist/add", {
           title,
           description,
           todo: tasks,
         });
       }
-      navigate("/"); // Retour au dashboard
+      navigate("/"); // Go back to dashboard
     } catch (error) {
       console.error("Error saving checklist:", error);
     }
@@ -75,11 +75,11 @@ function ChecklistForm() {
 
   return (
     <div className="form">
-      {/* Titre principal Form et sous-titre dynamique */}
+      {/* Main title Form and dynamic subtitle*/}
       <h1>Form</h1>
       <h2>{id ? "Edit Checklist" : "New Checklist"}</h2>
 
-      {/* Champs pour le titre et la description */}
+      {/* Fields for title and description*/}
       <input
         type="text"
         placeholder="Title"
@@ -126,7 +126,7 @@ function ChecklistForm() {
         + Add Task
       </button>
 
-      {/* Boutons de sauvegarde et retour */}
+      {/* Save and return buttons */}
       <button onClick={saveChecklist} className="button save-button">
         Save Checklist
       </button>

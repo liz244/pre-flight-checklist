@@ -1,25 +1,25 @@
-/* Palette de couleurs */
+/* Color palette*/
 :root {
   --primary-blue: #26547C;
   --primary-pink: #EF476F;
   --primary-yellow: #FFD166;
   --white: #ffffff;
   --light-gray: #f9f9f9;
-  --dark-gray: #333;
+  --dark-back: #000;
   --hover-gray: #f1f1f1;
 }
 
-/* Styles de base pour l'application */
+/* Basic styles for the application */
 body {
   font-family: Arial, sans-serif;
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  background-color: #ffffff; /* Fond principal */
-  color:#333; /* Texte principal */
+  background-color: #ffffff; /* Principa font */
+  color:#333; /* Main text */
 }
 
-/* Styles pour le conteneur principal */
+/* Styles for the main container */
 .container {
   max-width: 1200px;
   margin: auto;
@@ -52,29 +52,29 @@ body {
   padding: 20px;
   max-width: 800px;
   margin: auto;
-  background-color: var(--white); /* Fond blanc */
+  background-color: var(--white); /* White font */
   border-radius: 10px;
 }
 
-/* Titre principal Dashboard */
+/* Main title for Dashboard */
 .dashboard h1 {
   font-size: 64px;
   font-family: 'Inknut Antiqua', serif;
   font-weight: regular;
   text-align: center;
   margin-bottom: 20px;
-  color: #26547C; /* Texte bleu */
+  color: #26547C; /* blue text */
   margin-bottom: 20px;
 }
 
-/* Liste des checklists */
+/* Checklist list */
 .checklist-list {
   list-style: none;
   padding: 0;
 }
 
 .checklist-item {
-  background-color: #f9f9f9; /* Fond blanc cassé */
+  background-color: #f9f9f9; /* Off-white background*/
   border-radius: 5px;
   padding: 20px;
   margin-bottom: 20px;
@@ -84,13 +84,13 @@ body {
 }
 
 .checklist-item h2 {
-  text-align: center; /* Centrer horizontalement */
-  margin: 0 auto; /* Assurer un espacement égal */
-  font-family: 'Itim', sans-serif; /* Correspond à votre style */
-  font-size: 30px; /* Taille de la police */
+  text-align: center; /* Center horizontally */
+  margin: 0 auto; /* Ensure equal spacing */
+  font-family: 'Itim', sans-serif; /* Matches your style*/
+  font-size: 30px; /* Font size/
   font-weight: regular;
-  line-height: 1.2; /* Ajuster l'espacement vertical */
-  color: #000000; /* Noir */
+  line-height: 1.2; /* Adjust vertical spacing */
+  color: #000000; /* Black*/
 }
 
 .checklist-item:hover {
@@ -100,11 +100,11 @@ body {
 
 .checklist-link {
   text-decoration: none;
-  color: #000000; /* Texte noir */
+  color: #000000; /* Blac text */
 }
 
 .status {
-  color: #ffd166; /* Jaune */
+  color: #ffd166; /* yellow*/
   font-size: 18px;
   font-weight: bold;
   text-transform: uppercase;
@@ -120,7 +120,7 @@ body {
 }
 
 .checklist-item:hover {
-  background-color: inherit; /* Conserve la couleur de fond actuelle */
+  background-color: inherit; /* Keep current background color*/
 }
 
 
@@ -138,7 +138,7 @@ body {
   margin-top: 10px;
 }
 
-/* Boutons */
+/* Buttons*/
 .button {
   padding: 10px 15px;
   margin-right: 10px;
@@ -148,66 +148,65 @@ body {
 }
 
 .new-button {
-    background-color: #FFD166; /* Jaune */
-    color: #000000; /* Noir pour le texte */
-    font-family: 'Inter', sans-serif; /* Police personnalisée */
+    background-color: #FFD166; /* yellow */
+    color: #000000; /* black to text */
+    font-family: 'Inter', sans-serif; /* personnalized police */
     font-size: 36px;
     font-weight: regular;
     border: none;
-    border-radius: 0; /* Pas de coins arrondis */
+    border-radius: 0; /* No rounded corners */
     width: 775px;
     height: 75px;
     text-align: center;
-    line-height: 75px; /* Alignement vertical */
+    line-height: 75px; /* Vertical alignment */
     cursor: pointer;
     display: inline-block;
-    text-decoration: none; /* Enlève la ligne soulignée */
+    text-decoration: none; /* Remove the underlined line */
   }
-  
   .actions {
     display: flex;
-    justify-content: flex-end; /* Aligne les boutons à droite */
-    gap: 10px; /* Ajoute un espace entre les boutons */
-    margin-top: 20px; /* Crée de l'espace par rapport au contenu précédent */
-  }
-  
-  .actions .button {
+    justify-content: flex-end; /* Align buttons to the right */
+    gap: 10px; /* Add spacing between buttons */
+    margin-top: 20px; /* Create space above the section */
+}
+
+.actions .button {
     padding: 10px 20px;
     font-size: 14px;
     border-radius: 5px;
     font-weight: bold;
     cursor: pointer;
-  }
+}
 
 .edit-button {
-  text-decoration: none; /* Supprime le soulignement */
-  text-transform: uppercase; /* Met le texte en majuscule */
-  color: #000000; /* Texte en noir */
-  font-family: 'Inter', sans-serif; /* Police choisie */
-  font-size: 16px; /* Ajustez selon vos besoins */
-  font-weight: bold; /* Texte en gras */
-  background-color: #26547C; /* Fond bleu */
-  padding: 10px 20px; /* Ajustez selon vos besoins */
-  cursor: pointer; /* Curseur en mode "pointer" */
+  text-decoration: none; /* Remove underline */
+  text-transform: uppercase; /* Convert text to uppercase */
+  color: #000000; /* Text color black */
+  font-family: 'Inter', sans-serif; /* Selected font */
+  font-size: 16px; /* Adjust according to needs */
+  font-weight: bold; /* Make text bold */
+  background-color: #26547C; /* Blue background */
+  padding: 10px 20px; /* Adjust according to needs */
+  cursor: pointer; /* Show pointer cursor */
 }
 
 .edit-button:hover {
-  background-color: #003d66; /* Bleu plus foncé au survol */
+  background-color: #003d66; /* Darker blue on hover */
 }
 
 .delete-button {
-    text-transform: uppercase; /* Met en majuscule tout le texte */
-    color: #000000; /* Texte en noir */
-    font-family: 'Inter', sans-serif; /* Police choisie (ou celle utilisée dans le projet) */
-    font-size: 16px; /* Ajustez selon vos besoins */
+    text-transform: uppercase; /* Convert all text to uppercase */
+    color: #000000; /* Text color black */
+    font-family: 'Inter', sans-serif; /* Selected font */
+    font-size: 16px; /* Adjust according to needs */
 
-    background-color:#000000; /* Gardez ou changez la couleur de fond selon vos besoins */
-    padding: 10px 20px; /* Ajustez selon vos besoins */
-    cursor: pointer; /* Curseur en mode "pointer" pour montrer que c'est un bouton */
+    background-color:#000000; /* Keep or change background color */
+    padding: 10px 20px; /* Adjust according to needs */
+    cursor: pointer; /* Show pointer cursor */
 }
 .delete-button:hover {
-  background-color: #b20037; /* Rouge plus foncé au survol */
-  color: #000000; /* Texte toujours noir */
+  background-color: #b20037; /* Darker red on hover */
+  color: #000000; /* Keep text black */
 }
 
 @media (max-width: 768px) {
@@ -221,13 +220,9 @@ body {
   }
 }
 
-
 /* Checklist details styles */
 
-
-
 .checklist-details {
-  
   max-width: 800px;
   margin: 0 auto;
   background-color: #ffffff;
@@ -241,21 +236,19 @@ body {
   font-weight: regular;
   text-align: center;
   margin-bottom: 20px;
-  color: #26547C; /* Texte bleu */
+  color: #26547C; /* Text blue */
   margin-bottom: 20px;
 }
 
 .checklist-details h2 {
-  text-align: center; /* Centrer horizontalement */
-  margin: 0 auto; /* Assurer un espacement égal */
-  font-family: 'Itim', sans-serif; /* Correspond à votre style */
-  font-size: 30px; /* Taille de la police */
+  text-align: center; /* Center horizontally */
+  margin: 0 auto; /* Ensure equal spacing */
+  font-family: 'Itim', sans-serif; /* Match your style */
+  font-size: 30px; /* Font size */
   font-weight: regular;
-  line-height: 1.2; /* Ajuster l'espacement vertical */
-  color: #000000; /* Noir */
+  line-height: 1.2; /* Adjust vertical spacing */
+  color: #000000; /* Black */
 }
-
-
 
 .tasks-list {
   list-style: none;
@@ -263,7 +256,6 @@ body {
 }
 
 .task-item {
-  
   padding: 10px;
   margin-bottom: 10px;
   border-radius: 5px;
@@ -279,7 +271,6 @@ body {
 .task-item:hover {
   background-color: var(--hover-gray);
 }
-
 
 .back-button {
   display: inline-block;
@@ -311,7 +302,7 @@ body {
   font-weight: regular;
   text-align: center;
   margin-bottom: 20px;
-  color: #26547C; /* Texte bleu */
+  color: #26547C; /* Text blue */
   margin-bottom: 20px;
 }
 
@@ -337,53 +328,49 @@ body {
 }
 
 .add-button {
-  text-decoration: none; /* Supprime le soulignement */
-  text-transform: uppercase; /* Met le texte en majuscule */
-  color: #000000; /* Texte en noir */
-  font-family: 'Inter', sans-serif; /* Police choisie */
-  font-size: 16px; /* Ajustez selon vos besoins */
-  font-weight: bold; /* Texte en gras */
-  background-color: #FFD166; /* Fond bleu */
-  padding: 10px 20px; /* Ajustez selon vos besoins */
-  cursor: pointer; /* Curseur en mode "pointer" */
+  text-decoration: none; /* Remove underline */
+  text-transform: uppercase; /* Convert text to uppercase */
+  color: #000000; /* Text color black */
+  font-family: 'Inter', sans-serif; /* Selected font */
+  font-size: 16px; /* Adjust according to needs */
+  font-weight: bold; /* Make text bold */
+  background-color: #FFD166; /* Yellow background */
+  padding: 10px 20px; /* Adjust according to needs */
+  cursor: pointer; /* Show pointer cursor */
 }
-
 
 .save-button {
-  text-decoration: none; /* Supprime le soulignement */
-  text-transform: uppercase; /* Met le texte en majuscule */
-  color: #000000; /* Texte en noir */
-  font-family: 'Inter', sans-serif; /* Police choisie */
-  font-size: 16px; /* Ajustez selon vos besoins */
-  font-weight: bold; /* Texte en gras */
-  background-color: #26547C; /* Fond bleu */
-  padding: 10px 20px; /* Ajustez selon vos besoins */
-  cursor: pointer; /* Curseur en mode "pointer" */
+  text-decoration: none; /* Remove underline */
+  text-transform: uppercase; /* Convert text to uppercase */
+  color: #000000; /* Text color black */
+  font-family: 'Inter', sans-serif; /* Selected font */
+  font-size: 16px; /* Adjust according to needs */
+  font-weight: bold; /* Make text bold */
+  background-color: #26547C; /* Blue background */
+  padding: 10px 20px; /* Adjust according to needs */
+  cursor: pointer; /* Show pointer cursor */
 }
-
 
 .delete-button {
-  text-decoration: none; /* Supprime le soulignement */
-  text-transform: uppercase; /* Met le texte en majuscule */
-  color: #000000; /* Texte en noir */
-  font-family: 'Inter', sans-serif; /* Police choisie */
-  font-size: 16px; /* Ajustez selon vos besoins */
-  font-weight: bold; /* Texte en gras */
-  background-color: #EF476F; /* Fond bleu */
-  padding: 10px 20px; /* Ajustez selon vos besoins */
-  cursor: pointer; /* Curseur en mode "pointer" */
+  text-decoration: none; /* Remove underline */
+  text-transform: uppercase; /* Convert text to uppercase */
+  color: #000000; /* Text color black */
+  font-family: 'Inter', sans-serif; /* Selected font */
+  font-size: 16px; /* Adjust according to needs */
+  font-weight: bold; /* Make text bold */
+  background-color: #EF476F; /* Red background */
+  padding: 10px 20px; /* Adjust according to needs */
+  cursor: pointer; /* Show pointer cursor */
 }
-
 
 .back-button {
-  text-decoration: none; /* Supprime le soulignement */
-  text-transform: uppercase; /* Met le texte en majuscule */
-  color: #26547C; /* Texte en noir */
-  font-family: 'Inter', sans-serif; /* Police choisie */
-  font-size: 16px; /* Ajustez selon vos besoins */
-  font-weight: bold; /* Texte en gras */
-  background-color: #FFD166; /* Fond bleu */
-  padding: 10px 20px; /* Ajustez selon vos besoins */
-  cursor: pointer; /* Curseur en mode "pointer" */
+  text-decoration: none; /* Remove underline */
+  text-transform: uppercase; /* Convert text to uppercase */
+  color: #26547C; /* Text color blue */
+  font-family: 'Inter', sans-serif; /* Selected font */
+  font-size: 16px; /* Adjust according to needs */
+  font-weight: bold; /* Make text bold */
+  background-color: #FFD166; /* Yellow background */
+  padding: 10px 20px; /* Adjust according to needs */
+  cursor: pointer; /* Show pointer cursor */
 }
-

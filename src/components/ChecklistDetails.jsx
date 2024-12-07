@@ -3,10 +3,10 @@ import { useParams, Link } from "react-router-dom";
 import api from "../services/api";
 
 function ChecklistDetails() {
-  const { id } = useParams(); // Récupère l'ID de la checklist depuis l'URL
+  const { id } = useParams(); // Get checklist ID from URL
   const [checklist, setChecklist] = useState(null);
 
-  // Fonction pour récupérer la checklist par son ID
+  //Function to retrieve the checklist by its ID
   useEffect(() => {
     async function fetchChecklist() {
       try {
@@ -19,7 +19,7 @@ function ChecklistDetails() {
     fetchChecklist();
   }, [id]);
 
-  // Fonction pour inverser le statut d'une tâche
+  // Function to reverse the status of a task
   async function toggleTaskStatus(taskIndex) {
     if (!checklist) return;
 
@@ -30,11 +30,11 @@ function ChecklistDetails() {
       return task;
     });
 
-    // Met à jour l'état global de la checklist
+    // Updates the overall status of the checklist
     const updatedStatus =
       updatedTasks.every((task) => task.status === 1) ? 2 : 1;
 
-    // Sauvegarde les modifications via l'API
+    // Save changes via API
     try {
       await api.post("checklist/update", {
         id,
@@ -44,7 +44,7 @@ function ChecklistDetails() {
         status: updatedStatus,
       });
 
-      // Met à jour l'état local
+      // Updates local state
       setChecklist({ ...checklist, todo: updatedTasks, status: updatedStatus });
     } catch (error) {
       console.error("Error updating task status:", error);
@@ -55,10 +55,10 @@ function ChecklistDetails() {
 
   return (
     <div className="checklist-details">
-      {/* Titre principal de l'écran */}
+      {/* Main screen title */}
       <h1 className="screen-title">CHECKLIST</h1>
 
-      {/* Conteneur du titre et de l'état */}
+      {/* Title and state container */}
       <div className="checklist-header">
         <h2 className="checklist-title">{checklist.title}</h2>
         <span className="checklist-state">
@@ -70,10 +70,10 @@ function ChecklistDetails() {
         </span>
       </div>
 
-      {/* Description de la checklist */}
+      {/* Checklist description */}
       <p className="checklist-description">{checklist.description}</p>
 
-      {/* Liste des tâches */}
+      {/*Task list*/}
       <ul className="task-list">
         {checklist.todo.map((task, index) => (
           <li
@@ -97,7 +97,7 @@ function ChecklistDetails() {
         ))}
       </ul>
 
-      {/* Bouton pour revenir au tableau de bord */}
+      {/* Button to return to the dashboard*/}
       <Link to="/" className="button back-button">
         BACK TO DASHBOARD
       </Link>
