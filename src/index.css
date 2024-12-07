@@ -15,8 +15,8 @@ body {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  background-color: var(--primary-blue); /* Fond principal */
-  color: var(--white); /* Texte principal */
+  background-color: #ffffff; /* Fond principal */
+  color:#333; /* Texte principal */
 }
 
 /* Styles pour le conteneur principal */
@@ -58,11 +58,13 @@ body {
 
 /* Titre principal Dashboard */
 .dashboard h1 {
-  font-size: 36px;
-  font-weight: bold;
+  font-size: 64px;
+  font-family: 'Inknut Antiqua', serif;
+  font-weight: regular;
   text-align: center;
   margin-bottom: 20px;
-  color: var(--dark-gray); /* Texte noir */
+  color: #26547C; /* Texte bleu */
+  margin-bottom: 20px;
 }
 
 /* Liste des checklists */
@@ -72,27 +74,64 @@ body {
 }
 
 .checklist-item {
-  border: 1px solid var(--primary-pink);
-  padding: 15px;
-  margin-bottom: 15px;
+  background-color: #f9f9f9; /* Fond blanc cassé */
   border-radius: 5px;
-  background-color: var(--light-gray);
-  color: var(--dark-gray); /* Texte noir */
-  transition: background-color 0.2s;
+  padding: 20px;
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .checklist-item h2 {
-  margin: 0 0 10px;
+  text-align: center; /* Centrer horizontalement */
+  margin: 0 auto; /* Assurer un espacement égal */
+  font-family: 'Itim', sans-serif; /* Correspond à votre style */
+  font-size: 30px; /* Taille de la police */
+  font-weight: regular;
+  line-height: 1.2; /* Ajuster l'espacement vertical */
+  color: #000000; /* Noir */
 }
 
 .checklist-item:hover {
   background-color: var(--primary-yellow);
-  color: var(--dark-gray);
+  color:#000000;
 }
 
 .checklist-link {
   text-decoration: none;
-  color: var(--dark-gray); /* Texte noir */
+  color: #000000; /* Texte noir */
+}
+
+.status {
+  color: #ffd166; /* Jaune */
+  font-size: 18px;
+  font-weight: bold;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+
+.checklist-title {
+  font-family: 'Itim', sans-serif;
+  font-size: 24px;
+  color: #000;
+  text-align: left;
+  margin-bottom: 10px;
+}
+
+.checklist-item:hover {
+  background-color: inherit; /* Conserve la couleur de fond actuelle */
+}
+
+
+.task-progress {
+  font-size: 14px;
+  color: #26547C;
+}
+
+.task-progress .total-task {
+  font-weight: bold;
+  color: #000;
 }
 
 .actions {
@@ -109,14 +148,47 @@ body {
 }
 
 .new-button {
-  background-color: var(--primary-yellow);
-  color: var(--dark-gray);
-  text-decoration: none;
-}
+    background-color: #FFD166; /* Jaune */
+    color: #000000; /* Noir pour le texte */
+    font-family: 'Inter', sans-serif; /* Police personnalisée */
+    font-size: 36px;
+    font-weight: regular;
+    border: none;
+    border-radius: 0; /* Pas de coins arrondis */
+    width: 775px;
+    height: 75px;
+    text-align: center;
+    line-height: 75px; /* Alignement vertical */
+    cursor: pointer;
+    display: inline-block;
+    text-decoration: none; /* Enlève la ligne soulignée */
+  }
+  
+  .actions {
+    display: flex;
+    justify-content: flex-end; /* Aligne les boutons à droite */
+    gap: 10px; /* Ajoute un espace entre les boutons */
+    margin-top: 20px; /* Crée de l'espace par rapport au contenu précédent */
+  }
+  
+  .actions .button {
+    padding: 10px 20px;
+    font-size: 14px;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+  }
 
 .edit-button {
-  background-color: var(--primary-blue); /* Bleu pour le bouton Edit */
-  color: var(--white);
+  text-decoration: none; /* Supprime le soulignement */
+  text-transform: uppercase; /* Met le texte en majuscule */
+  color: #000000; /* Texte en noir */
+  font-family: 'Inter', sans-serif; /* Police choisie */
+  font-size: 16px; /* Ajustez selon vos besoins */
+  font-weight: bold; /* Texte en gras */
+  background-color: #26547C; /* Fond bleu */
+  padding: 10px 20px; /* Ajustez selon vos besoins */
+  cursor: pointer; /* Curseur en mode "pointer" */
 }
 
 .edit-button:hover {
@@ -124,12 +196,18 @@ body {
 }
 
 .delete-button {
-  background-color: var(--primary-pink); /* Rouge pour le bouton Delete */
-  color: var(--white);
-}
+    text-transform: uppercase; /* Met en majuscule tout le texte */
+    color: #000000; /* Texte en noir */
+    font-family: 'Inter', sans-serif; /* Police choisie (ou celle utilisée dans le projet) */
+    font-size: 16px; /* Ajustez selon vos besoins */
 
+    background-color:#000000; /* Gardez ou changez la couleur de fond selon vos besoins */
+    padding: 10px 20px; /* Ajustez selon vos besoins */
+    cursor: pointer; /* Curseur en mode "pointer" pour montrer que c'est un bouton */
+}
 .delete-button:hover {
   background-color: #b20037; /* Rouge plus foncé au survol */
+  color: #000000; /* Texte toujours noir */
 }
 
 @media (max-width: 768px) {
@@ -143,23 +221,41 @@ body {
   }
 }
 
+
 /* Checklist details styles */
+
+
+
 .checklist-details {
-  padding: 20px;
+  
   max-width: 800px;
-  margin: auto;
-  background-color: var(--white);
+  margin: 0 auto;
+  background-color: #ffffff;
+  padding: 20px;
   border-radius: 10px;
-  color: var(--dark-gray);
 }
 
 .checklist-details h1 {
-  font-size: 24px;
-  font-weight: bold;
-  margin-bottom: 20px;
+  font-size: 64px;
+  font-family: 'Inknut Antiqua', serif;
+  font-weight: regular;
   text-align: center;
-  color: var(--primary-pink);
+  margin-bottom: 20px;
+  color: #26547C; /* Texte bleu */
+  margin-bottom: 20px;
 }
+
+.checklist-details h2 {
+  text-align: center; /* Centrer horizontalement */
+  margin: 0 auto; /* Assurer un espacement égal */
+  font-family: 'Itim', sans-serif; /* Correspond à votre style */
+  font-size: 30px; /* Taille de la police */
+  font-weight: regular;
+  line-height: 1.2; /* Ajuster l'espacement vertical */
+  color: #000000; /* Noir */
+}
+
+
 
 .tasks-list {
   list-style: none;
@@ -167,7 +263,7 @@ body {
 }
 
 .task-item {
-  border: 1px solid var(--primary-blue);
+  
   padding: 10px;
   margin-bottom: 10px;
   border-radius: 5px;
@@ -177,25 +273,26 @@ body {
 }
 
 .task-item.completed {
-  background-color: var(--primary-yellow);
+  background-color: #F9F9F9;
 }
 
 .task-item:hover {
   background-color: var(--hover-gray);
 }
 
+
 .back-button {
   display: inline-block;
   margin-top: 20px;
   padding: 10px 15px;
-  background-color: var(--primary-blue);
-  color: var(--white);
+  background-color:#FFD166;
+  color:#000000;
   text-decoration: none;
   border-radius: 5px;
 }
 
 .back-button:hover {
-  background-color: var(--primary-pink);
+  background-color:#bd8e22;
 }
 
 /* Form styles */
@@ -209,11 +306,13 @@ body {
 }
 
 .form h1 {
-  font-size: 32px;
-  font-weight: bold;
-  margin-bottom: 10px;
+  font-size: 64px;
+  font-family: 'Inknut Antiqua', serif;
+  font-weight: regular;
   text-align: center;
-  color: var(--primary-blue);
+  margin-bottom: 20px;
+  color: #26547C; /* Texte bleu */
+  margin-bottom: 20px;
 }
 
 .form h2 {
@@ -221,7 +320,7 @@ body {
   font-weight: normal;
   margin-bottom: 20px;
   text-align: center;
-  color: var(--primary-pink);
+  color:#26547C;
 }
 
 .form-input,
@@ -231,8 +330,6 @@ body {
   margin-bottom: 10px;
   padding: 10px;
   font-size: 16px;
-  border: 1px solid var(--primary-blue);
-  border-radius: 5px;
 }
 
 .form-textarea {
@@ -240,22 +337,53 @@ body {
 }
 
 .add-button {
-  background-color: var(--primary-yellow);
-  color: var(--dark-gray);
+  text-decoration: none; /* Supprime le soulignement */
+  text-transform: uppercase; /* Met le texte en majuscule */
+  color: #000000; /* Texte en noir */
+  font-family: 'Inter', sans-serif; /* Police choisie */
+  font-size: 16px; /* Ajustez selon vos besoins */
+  font-weight: bold; /* Texte en gras */
+  background-color: #FFD166; /* Fond bleu */
+  padding: 10px 20px; /* Ajustez selon vos besoins */
+  cursor: pointer; /* Curseur en mode "pointer" */
 }
+
 
 .save-button {
-  background-color: var(--primary-pink);
-  color: var(--white);
+  text-decoration: none; /* Supprime le soulignement */
+  text-transform: uppercase; /* Met le texte en majuscule */
+  color: #000000; /* Texte en noir */
+  font-family: 'Inter', sans-serif; /* Police choisie */
+  font-size: 16px; /* Ajustez selon vos besoins */
+  font-weight: bold; /* Texte en gras */
+  background-color: #26547C; /* Fond bleu */
+  padding: 10px 20px; /* Ajustez selon vos besoins */
+  cursor: pointer; /* Curseur en mode "pointer" */
 }
+
 
 .delete-button {
-  background-color: var(--primary-pink);
-  color: var(--white);
+  text-decoration: none; /* Supprime le soulignement */
+  text-transform: uppercase; /* Met le texte en majuscule */
+  color: #000000; /* Texte en noir */
+  font-family: 'Inter', sans-serif; /* Police choisie */
+  font-size: 16px; /* Ajustez selon vos besoins */
+  font-weight: bold; /* Texte en gras */
+  background-color: #EF476F; /* Fond bleu */
+  padding: 10px 20px; /* Ajustez selon vos besoins */
+  cursor: pointer; /* Curseur en mode "pointer" */
 }
 
+
 .back-button {
-  background-color: var(--primary-blue);
-  color: var(--white);
-  text-decoration: none;
+  text-decoration: none; /* Supprime le soulignement */
+  text-transform: uppercase; /* Met le texte en majuscule */
+  color: #26547C; /* Texte en noir */
+  font-family: 'Inter', sans-serif; /* Police choisie */
+  font-size: 16px; /* Ajustez selon vos besoins */
+  font-weight: bold; /* Texte en gras */
+  background-color: #FFD166; /* Fond bleu */
+  padding: 10px 20px; /* Ajustez selon vos besoins */
+  cursor: pointer; /* Curseur en mode "pointer" */
 }
+

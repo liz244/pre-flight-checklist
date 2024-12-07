@@ -55,20 +55,26 @@ function ChecklistDetails() {
 
   return (
     <div className="checklist-details">
-      {/* Nouveau titre indiquant l'écran */}
-      <h1>Checklist</h1>
-      <h2>{checklist.title}</h2>
-      <p>{checklist.description}</p>
-      <p>
-        Status:{" "}
-        {checklist.status === 0
-          ? "Empty"
-          : checklist.status === 1
-          ? "In Progress"
-          : "Completed"}
-      </p>
+      {/* Titre principal de l'écran */}
+      <h1 className="screen-title">CHECKLIST</h1>
 
-      <ul className="tasks-list">
+      {/* Conteneur du titre et de l'état */}
+      <div className="checklist-header">
+        <h2 className="checklist-title">{checklist.title}</h2>
+        <span className="checklist-state">
+          {checklist.status === 0
+            ? "Empty"
+            : checklist.status === 1
+            ? "In Progress"
+            : "Completed"}
+        </span>
+      </div>
+
+      {/* Description de la checklist */}
+      <p className="checklist-description">{checklist.description}</p>
+
+      {/* Liste des tâches */}
+      <ul className="task-list">
         {checklist.todo.map((task, index) => (
           <li
             key={index}
@@ -76,15 +82,24 @@ function ChecklistDetails() {
             onClick={() => toggleTaskStatus(index)}
             style={{ cursor: "pointer" }}
           >
-            <h3>{task.title}</h3>
-            {task.description && <p>{task.description}</p>}
-            <p>Status: {task.status === 0 ? "Not Done" : "Done"}</p>
+            <div className="task-info">
+              <h3 className="task-title">{task.title}</h3>
+              {task.description && (
+                <p className="task-description">{task.description}</p>
+              )}
+              <p className="task-status">
+                <span className="state-label">
+                  {task.status === 0 ? "Not Done" : "Done"}
+                </span>
+              </p>
+            </div>
           </li>
         ))}
       </ul>
 
+      {/* Bouton pour revenir au tableau de bord */}
       <Link to="/" className="button back-button">
-        Back to Dashboard
+        BACK TO DASHBOARD
       </Link>
     </div>
   );
